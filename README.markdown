@@ -30,7 +30,7 @@ class User extends \typeoform\Entity {
 	public $password = '';
 	public $isAdmin = 0;
 	
-	public functiom __toString() {
+	public function __toString() {
 		return $this->username;
 	}
 }
