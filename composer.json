@@ -1,0 +1,20 @@
+{
+	"name": "typeoform",
+	"type": "library",
+	"description": "A lightweight ORM. Better than handling with raw sql queries.",
+	"keywords": ["database", "persistence"],
+	"homepage": "http://github.com/schokocappucino/typeoform",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "schokocappucino"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"doctrine/dbal": ">=2.2.0,<2.4.0-dev"
+	},
+	"autoload": {
+		"psr-0": { "typeoform": "lib/" }
+	}
+}
