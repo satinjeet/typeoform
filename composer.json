@@ -1,5 +1,5 @@
 {
-	"name": "typeoform",
+	"name": "schokocappucino/typeoform",
 	"type": "library",
 	"description": "A lightweight ORM. Better than handling with raw sql queries.",
 	"keywords": ["database", "persistence"],
