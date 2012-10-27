@@ -160,9 +160,9 @@ Extensibility
 -------------
 
 typeoform is very flexible. For example if a plugin adds columns to a table,
-they are accessible in the Entity, too.
+they are accessible in the entity, too, without editing the entity class.
 
-Plugins could also change the entity class of repositorys:
+Plugins can also change the entity class of repositories:
 
 ```php
 class AwesomeUser extends User {
