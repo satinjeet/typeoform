@@ -1,5 +1,7 @@
 <?php
 namespace typeoform\Tests;
+use Doctrine\DBAL\DriverManager;
+use Doctrine\DBAL\Configuration;
 
 abstract class Test extends \PHPUnit_Framework_TestCase {
 	public function createDB() {
