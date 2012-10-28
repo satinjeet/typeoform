@@ -2,7 +2,7 @@
 namespace typeoform\Tests;
 use typeoform\User\UserRepository;
 
-class DeleteTest extends \PHPUnit_Framework_TestCase {
+class DeleteTest extends Test {
 	public function testDelete() {
 		$repository = new UserRepository($this->createDB(), 'typeoform\\User\\User', 'user');
 		

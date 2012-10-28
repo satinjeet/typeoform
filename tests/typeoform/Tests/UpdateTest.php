@@ -2,7 +2,7 @@
 namespace typeoform\Tests;
 use typeoform\User\UserRepository;
 
-class UpdateTest extends \PHPUnit_Framework_TestCase {
+class UpdateTest extends Test {
 	public function testUpdate() {
 		$repository = new UserRepository($this->createDB(), 'typeoform\\User\\User', 'user');
 		

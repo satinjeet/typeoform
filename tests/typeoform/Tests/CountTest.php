@@ -2,7 +2,7 @@
 namespace typeoform\Tests;
 use typeoform\User\UserRepository;
 
-class CountTest extends \PHPUnit_Framework_TestCase {
+class CountTest extends Test {
 	public function testQueryAll() {
 		$repository = new UserRepository($this->createDB(), 'typeoform\\User\\User', 'user');
 		

@@ -2,7 +2,7 @@
 namespace typeoform\Tests;
 use typeoform\User\UserRepository;
 
-class FindAllTest extends \PHPUnit_Framework_TestCase {
+class FindAllTest extends Test {
 	public function testFindAll() {
 		$repository = new UserRepository($this->createDB(), 'typeoform\\User\\User', 'user');
 		
