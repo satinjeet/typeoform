@@ -2,7 +2,7 @@
 	"name": "schokocappucino/typeoform",
 	"type": "library",
 	"description": "A lightweight ORM. Better than handling with raw sql queries.",
-	"keywords": ["database", "persistence"],
+	"keywords": ["database", "persistence", "orm"],
 	"homepage": "http://github.com/schokocappucino/typeoform",
 	"license": "MIT",
 	"authors": [
