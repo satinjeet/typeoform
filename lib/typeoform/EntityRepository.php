@@ -102,8 +102,8 @@ class EntityRepository implements EntityRepositoryInterface {
 	}
 	
 	public function setEntityClass($class) {
-		if (!is_subclass_of($class, 'Platzhalter\\Entity\\EntityInterface'))
-			throw new \InvalidArgumentException(sprintf('Entity class "%s" must implement "Platzhalter\\Entity\\EntityInterface"', $class));
+		if (!is_subclass_of($class, 'typeoform\\EntityInterface'))
+			throw new \InvalidArgumentException(sprintf('Entity class "%s" must implement "typeoform\\EntityInterface"', $class));
 		
 		$this->entityClass = $class;
 	}
