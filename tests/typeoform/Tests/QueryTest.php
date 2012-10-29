@@ -71,7 +71,7 @@ class QueryTest extends Test {
 		));
 		$user2->save();
 		
-		$users = $repository->query('WHERE username = ?', array('username1'));
+		$users = $repository->query('WHERE username = ?', array('Testusername1'));
 		
 		$this->assertEquals(count($users), 1);
 		
@@ -95,7 +95,7 @@ class QueryTest extends Test {
 		));
 		$user2->save();
 		
-		$users = $repository->query('WHERE username = ?', array('username1'), array(\PDO::PARAM_STR));
+		$users = $repository->query('WHERE username = ?', array('Testusername1'), array(\PDO::PARAM_STR));
 		
 		$this->assertEquals(count($users), 1);
 		

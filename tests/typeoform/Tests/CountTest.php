@@ -15,7 +15,7 @@ class CountTest extends Test {
 			'password' => 'testpassword2'
 		))->save();
 		
-		$count = $repository->query();
+		$count = $repository->count();
 		
 		$this->assertEquals($count, 2);
 	}
@@ -49,7 +49,7 @@ class CountTest extends Test {
 			'password' => 'testpassword2'
 		))->save();
 		
-		$count = $repository->count('WHERE username = ?', array('username1'));
+		$count = $repository->count('WHERE username = ?', array('Testusername1'));
 		
 		$this->assertEquals($count, 1);
 	}
@@ -66,7 +66,7 @@ class CountTest extends Test {
 			'password' => 'testpassword2'
 		))->save();
 		
-		$count = $repository->count('WHERE username = ?', array('username1'), array(\PDO::PARAM_STR));
+		$count = $repository->count('WHERE username = ?', array('Testusername1'), array(\PDO::PARAM_STR));
 		
 		$this->assertEquals($count, 1);
 	}

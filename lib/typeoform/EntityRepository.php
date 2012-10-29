@@ -31,7 +31,7 @@ class EntityRepository implements EntityRepositoryInterface {
 	public function findAll(array $where = array(), $sql = '') {
 		$criteria = '';
 		foreach ($where as $field => $value)
-			$criteria = (!empty($criteria) ? ' AND ' : '').$this->db->quoteIdentifier($field).' = ?';
+			$criteria .= (!empty($criteria) ? ' AND ' : '').$this->db->quoteIdentifier($field).' = ?';
 		
 		$sql = trim((!empty($criteria) ? "WHERE $criteria" : '').' '.$sql);
 		
@@ -67,7 +67,7 @@ class EntityRepository implements EntityRepositoryInterface {
 		if (isset($data[$this->getPrimaryKeyField()]))
 			unset($data[$this->getPrimaryKeyField()]);
 		
-		return $this->db->update($this->tableName, $this->quoteIdentifiers($data), array($this->getPrimaryKeyField() => $entity->getPrimaryKey()));
+		return (bool) $this->db->update($this->tableName, $this->quoteIdentifiers($data), array($this->getPrimaryKeyField() => $entity->getPrimaryKey()));
 	}
 	
 	protected function insert(EntityInterface $entity) {
@@ -77,7 +77,7 @@ class EntityRepository implements EntityRepositoryInterface {
 		
 		$result = $this->db->insert($this->tableName, $this->quoteIdentifiers($data));
 		$entity->{$this->getPrimaryKeyField()} = $this->db->lastInsertId();
-		return $result;
+		return (bool) $result;
 	}
 	
 	public function delete(EntityInterface $entity) {
@@ -85,7 +85,7 @@ class EntityRepository implements EntityRepositoryInterface {
 			$entity->{$this->getPrimaryKeyField()} = 0;
 		}
 		
-		return $result;
+		return (bool) $result;
 	}
 	
 	protected function getPrimaryKeyField() {
