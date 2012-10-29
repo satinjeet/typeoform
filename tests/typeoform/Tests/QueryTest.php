@@ -23,11 +23,11 @@ class QueryTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[0]->userID);
-		$this->assertEquals($user1->username, $user[0]->username);
-		$this->assertEquals($user1->password, $user[0]->password);
+		$this->assertEquals($user1->username, $users[0]->username);
+		$this->assertEquals($user1->password, $users[0]->password);
 		$this->assertEquals($user2->userID, $users[1]->userID);
-		$this->assertEquals($user2->username, $user[1]->username);
-		$this->assertEquals($user2->password, $user[1]->password);
+		$this->assertEquals($user2->username, $users[1]->username);
+		$this->assertEquals($user2->password, $users[1]->password);
 	}
 	
 	public function testQuery() {
@@ -50,11 +50,11 @@ class QueryTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[1]->userID);
-		$this->assertEquals($user1->username, $user[1]->username);
-		$this->assertEquals($user1->password, $user[1]->password);
+		$this->assertEquals($user1->username, $users[1]->username);
+		$this->assertEquals($user1->password, $users[1]->password);
 		$this->assertEquals($user2->userID, $users[0]->userID);
-		$this->assertEquals($user2->username, $user[0]->username);
-		$this->assertEquals($user2->password, $user[0]->password);
+		$this->assertEquals($user2->username, $users[0]->username);
+		$this->assertEquals($user2->password, $users[0]->password);
 	}
 	
 	public function testQueryWithParams() {
@@ -77,8 +77,8 @@ class QueryTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[0]->userID);
-		$this->assertEquals($user1->username, $user[0]->username);
-		$this->assertEquals($user1->password, $user[0]->password);
+		$this->assertEquals($user1->username, $users[0]->username);
+		$this->assertEquals($user1->password, $users[0]->password);
 	}
 	
 	public function testQueryWithParamsAndTypes() {
@@ -101,7 +101,7 @@ class QueryTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[0]->userID);
-		$this->assertEquals($user1->username, $user[0]->username);
-		$this->assertEquals($user1->password, $user[0]->password);
+		$this->assertEquals($user1->username, $users[0]->username);
+		$this->assertEquals($user1->password, $users[0]->password);
 	}
 }

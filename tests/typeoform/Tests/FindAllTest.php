@@ -23,11 +23,11 @@ class FindAllTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[0]->userID);
-		$this->assertEquals($user1->username, $user[0]->username);
-		$this->assertEquals($user1->password, $user[0]->password);
+		$this->assertEquals($user1->username, $users[0]->username);
+		$this->assertEquals($user1->password, $users[0]->password);
 		$this->assertEquals($user2->userID, $users[1]->userID);
-		$this->assertEquals($user2->username, $user[1]->username);
-		$this->assertEquals($user2->password, $user[1]->password);
+		$this->assertEquals($user2->username, $users[1]->username);
+		$this->assertEquals($user2->password, $users[1]->password);
 	}
 	
 	public function testFindAllInOrder() {
@@ -50,11 +50,11 @@ class FindAllTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[1]->userID);
-		$this->assertEquals($user1->username, $user[1]->username);
-		$this->assertEquals($user1->password, $user[1]->password);
+		$this->assertEquals($user1->username, $users[1]->username);
+		$this->assertEquals($user1->password, $users[1]->password);
 		$this->assertEquals($user2->userID, $users[0]->userID);
-		$this->assertEquals($user2->username, $user[0]->username);
-		$this->assertEquals($user2->password, $user[0]->password);
+		$this->assertEquals($user2->username, $users[0]->username);
+		$this->assertEquals($user2->password, $users[0]->password);
 	}
 	
 	public function testFindAllWhere() {
@@ -69,7 +69,7 @@ class FindAllTest extends Test {
 		$user2 = $repository->create(array(
 			'username' => 'Testusername2',
 			'password' => 'testpassword2',
-			'isAdmim' => 0
+			'isAdmin' => 0
 		));
 		$user2->save();
 		
@@ -79,9 +79,9 @@ class FindAllTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[0]->userID);
-		$this->assertEquals($user1->username, $user[0]->username);
-		$this->assertEquals($user1->password, $user[0]->password);
-		$this->assertEquals($user1->isAdmin, $user[0]->isAdmin);
+		$this->assertEquals($user1->username, $users[0]->username);
+		$this->assertEquals($user1->password, $users[0]->password);
+		$this->assertEquals($user1->isAdmin, $users[0]->isAdmin);
 	}
 	
 	public function testFindAllWhereInOrder() {
@@ -96,7 +96,7 @@ class FindAllTest extends Test {
 		$user2 = $repository->create(array(
 			'username' => 'Testusername2',
 			'password' => 'testpassword2',
-			'isAdmim' => 1
+			'isAdmin' => 1
 		));
 		$user2->save();
 		
@@ -106,12 +106,12 @@ class FindAllTest extends Test {
 		
 		$this->assertInstanceOf('typeoform\\User\\User', $users[0]);
 		$this->assertEquals($user1->userID, $users[1]->userID);
-		$this->assertEquals($user1->username, $user[1]->username);
-		$this->assertEquals($user1->password, $user[1]->password);
-		$this->assertEquals($user1->isAdmin, $user[1]->isAdmin);
+		$this->assertEquals($user1->username, $users[1]->username);
+		$this->assertEquals($user1->password, $users[1]->password);
+		$this->assertEquals($user1->isAdmin, $users[1]->isAdmin);
 		$this->assertEquals($user2->userID, $users[0]->userID);
-		$this->assertEquals($user2->username, $user[0]->username);
-		$this->assertEquals($user2->password, $user[0]->password);
-		$this->assertEquals($user2->isAdmin, $user[0]->isAdmin);
+		$this->assertEquals($user2->username, $users[0]->username);
+		$this->assertEquals($user2->password, $users[0]->password);
+		$this->assertEquals($user2->isAdmin, $users[0]->isAdmin);
 	}
 }

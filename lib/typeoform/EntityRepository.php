@@ -31,8 +31,7 @@ class EntityRepository implements EntityRepositoryInterface {
 	public function findAll(array $where = array(), $sql = '') {
 		$criteria = '';
 		foreach ($where as $field => $value)
-			$criteria = (!empty($criteria) ? ' AND ' : '').$this->db->quoteIdentifier($field)/*;
-			$criteria = (is_array($value) ? ' IN */.' = ?';
+			$criteria = (!empty($criteria) ? ' AND ' : '').$this->db->quoteIdentifier($field).' = ?';
 		
 		$sql = trim((!empty($criteria) ? "WHERE $criteria" : '').' '.$sql);
 		
