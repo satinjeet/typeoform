@@ -64,11 +64,19 @@ class EntityRepository implements EntityRepositoryInterface {
 	}
 	
 	protected function update(EntityInterface $entity) {
-		return $this->db->update($this->tableName, $this->quoteIdentifiers($entity->getData()), array($this->getPrimaryKeyField() => $entity->getPrimaryKey()));
+		$data = $entity->getData();
+		if (isset($data[$this->getPrimaryKeyField()]))
+			unset($data[$this->getPrimaryKeyField()]);
+		
+		return $this->db->update($this->tableName, $this->quoteIdentifiers($data), array($this->getPrimaryKeyField() => $entity->getPrimaryKey()));
 	}
 	
 	protected function insert(EntityInterface $entity) {
-		$result = $this->db->insert($this->tableName, $this->quoteIdentifiers($entity->getData()));
+		$data = $entity->getData();
+		if (isset($data[$this->getPrimaryKeyField()]))
+			unset($data[$this->getPrimaryKeyField()]);
+		
+		$result = $this->db->insert($this->tableName, $this->quoteIdentifiers($data));
 		$entity->{$this->getPrimaryKeyField()} = $this->db->lastInsertId();
 		return $result;
 	}
