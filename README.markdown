@@ -1,6 +1,8 @@
 typeoform - A lightweight ORM. Better than handling with raw sql queries.
 ==============================================================================
 
+[![Build Status](https://secure.travis-ci.org/schokocappucino/typeoform.png)](http://travis-ci.org/schokocappucino/typeoform)
+
 typeoform querys your database and maps tables to classes. It's perfect
 if your project is small and you just wan't to fill objects with records from
 the database. It relies on Doctrine DBAL and consists of 2 classes and 2 interfaces.
