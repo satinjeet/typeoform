@@ -6,6 +6,9 @@ abstract class Entity implements EntityInterface {
 	protected $_repository;
 	
 	public static function getPrimaryKeyField() {
+		if (empty(static::$_primaryKeyField)) 
+			throw new \Exception('static::$_primaryKeyField musn\'t be empty');
+		
 		return static::$_primaryKeyField;
 	}
 	
