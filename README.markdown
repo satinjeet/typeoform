@@ -21,7 +21,7 @@ CREATE TABLE user (
 ```
 
 Your model extends typeoform\Entity. You can provide default values for fields by adding properties.
-The repository gives you access to all records. If you don't want't to add additional methods your
+The repository gives you access to all records. If you don't wan't to add additional methods to your
 repository you can instantiate typeoform\EntityRepository directly, too. 
 
 ```php
