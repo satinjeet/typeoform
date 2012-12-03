@@ -33,7 +33,7 @@ abstract class Entity implements EntityInterface {
 	}
 	
 	public function save() {
-		if ($this->_repository === null) throw new Exception('Entity has no repository');
+		if ($this->_repository === null) throw new \Exception('Entity has no repository');
 		return $this->_repository->save($this);
 	}
 	
@@ -43,7 +43,7 @@ abstract class Entity implements EntityInterface {
 	}
 	
 	public function delete() {
-		if ($this->_repository === null) throw new Exception('Entity has no repository');
+		if ($this->_repository === null) throw new \Exception('Entity has no repository');
 		return $this->_repository->delete($this);
 	}
 	
