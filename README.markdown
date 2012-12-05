@@ -26,7 +26,7 @@ repository you can instantiate typeoform\EntityRepository directly, too.
 
 ```php
 class User extends \typeoform\Entity {
-	protected static $_primaryKey = 'userID';
+	protected static $_primaryKeyField = 'userID';
 	public $userID = 0;
 	public $username = ''
 	public $password = '';
